@@ -1,0 +1,17 @@
+[
+  {
+    "word": "hello",
+    "meaning": "xin chào",
+    "synonyms": ["hi", "greetings"]
+  },
+  {
+    "word": "goodbye",
+    "meaning": "tạm biệt",
+    "synonyms": ["bye", "see you"]
+  },
+  {
+    "word": "happy",
+    "meaning": "vui vẻ",
+    "synonyms": ["joyful", "cheerful"]
+  }
+]

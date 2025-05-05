@@ -1,54 +1,53 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WordData {
-    private String Word;
-    private String Meaning;
-    private List<String> Synonyms;
+    private String word;
+    private String meaning;
+    private List<String> synonyms;
 
-    // Contructor ---------------------------------------------------------
     public WordData(String word, String meaning, List<String> synonyms) {
-        Word = word;
-        Meaning = meaning;
-        Synonyms = synonyms;
+        this.word = word;
+        this.meaning = meaning;
+        this.synonyms = synonyms != null ? synonyms : new ArrayList<>();
     }
-    // --------------------------------------------------------------------
-    // Getter -------------------------------------------------------------
-    public String getWord() {
-        return Word;
-    }
-    public String getMeaning() {
-        return Meaning;
-    }
-    public List<String> getSynonyms() {
-        return Synonyms;
-    }
-    // --------------------------------------------------------------------
 
-    // Setter -------------------------------------------------------------
+    // Getters and Setters
+    public String getWord() {
+        return word;
+    }
+
     public void setWord(String word) {
-        this.Word = word;
+        this.word = word;
+    }
+
+    public String getMeaning() {
+        return meaning;
     }
 
     public void setMeaning(String meaning) {
-        this.Meaning = meaning;
+        this.meaning = meaning;
+    }
+
+    public List<String> getSynonyms() {
+        return synonyms;
     }
 
     public void setSynonyms(List<String> synonyms) {
-        this.Synonyms = synonyms;
+        this.synonyms = synonyms;
     }
-    // --------------------------------------------------------------------
-    // toString -----------------------------------------------------------
+
+    public void addSynonym(String synonym) {
+        if (!synonyms.contains(synonym)) {
+            synonyms.add(synonym);
+        }
+    }
+
     @Override
     public String toString() {
-        return "Word{" +
-                "word='" + Word + '\'' +
-                ", meaning='" + Meaning + '\'' +
-                ", synonyms=" + Synonyms +
-                '}';
+        return "Word: " + word + "\nMeaning: " + meaning +
+                "\nSynonyms: " + String.join(", ", synonyms);
     }
-    // --------------------------------------------------------------------
-
 }
-

@@ -1,16 +1,25 @@
 package manager;
 
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 public class HistoryManager {
-    private Deque<String> recentLookups;            // giới hạn lưu trữ
+    private final int maxSize;
+    private final LinkedList<String> history;
 
-    public void addHistory(String word){
-        //
+    public HistoryManager(int maxSize) {
+        this.maxSize = maxSize;
+        this.history = new LinkedList<>();
     }
-    public List<String> getRecentHistory(){
-        return null;
+
+    public void addToHistory(String word) {
+        history.remove(word); // Remove if already exists to avoid duplicates
+        history.addFirst(word);
+        if (history.size() > maxSize) {
+            history.removeLast();
+        }
+    }
+
+    public List<String> getHistory() {
+        return new ArrayList<>(history);
     }
 }
-

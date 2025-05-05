@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="json-20210307">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/json-20210307.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/google-cloud-translate-1.98.5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/dotenv-java-3.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
