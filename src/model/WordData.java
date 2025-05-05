@@ -8,13 +8,15 @@ public class WordData {
     private String meaning;
     private List<String> synonyms;
 
+    // Contructor -----------------------------------------------------------
     public WordData(String word, String meaning, List<String> synonyms) {
         this.word = word;
         this.meaning = meaning;
         this.synonyms = synonyms != null ? synonyms : new ArrayList<>();
     }
+    // ----------------------------------------------------------------------
 
-    // Getters and Setters
+    // Getters and Setters --------------------------------------------------
     public String getWord() {
         return word;
     }
@@ -44,10 +46,14 @@ public class WordData {
             synonyms.add(synonym);
         }
     }
+    // ----------------------------------------------------------------------
 
+    // toString() ------------------------------------------------------------
     @Override
     public String toString() {
-        return "Word: " + word + "\nMeaning: " + meaning +
+        return "Word: " + word +
+                "\nMeaning: " + meaning +
                 "\nSynonyms: " + String.join(", ", synonyms);
     }
+    // ----------------------------------------------------------------------
 }

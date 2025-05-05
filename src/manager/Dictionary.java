@@ -54,4 +54,7 @@ public class Dictionary {
     public boolean containsWord(String word) {
         return wordMap.containsKey(word.toLowerCase());
     }
+
+    public void clear() {
+    }
 }

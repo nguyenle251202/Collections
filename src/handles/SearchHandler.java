@@ -13,11 +13,24 @@ public class SearchHandler {
 
     public void handle() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter search option:");
-        System.out.println("1. Exact word search");
-        System.out.println("2. Prefix search");
-        int choice = scanner.nextInt();
-        scanner.nextLine(); // consume newline
+        int choice;
+        while (true) {
+            System.out.println("Enter search option:");
+            System.out.println("1. Exact word search");
+            System.out.println("2. Prefix search");
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                scanner.nextLine(); // consume newline
+                if (choice == 1 || choice == 2) {
+                    break;
+                } else {
+                    System.out.println("Invalid choice. Please enter 1 or 2.");
+                }
+            } else {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.nextLine(); // consume invalid input
+            }
+        }
 
         if (choice == 1) {
             System.out.println("Enter word to search: ");
@@ -34,7 +47,7 @@ public class SearchHandler {
                     System.out.println("Word not found and no suggestions available.");
                 }
             }
-        } else if (choice == 2) {
+        } else { // choice == 2
             System.out.println("Enter prefix to search: ");
             String prefix = scanner.nextLine();
             List<String> results = dictionary.searchByPrefix(prefix);
@@ -44,8 +57,6 @@ public class SearchHandler {
             } else {
                 System.out.println("No words found with this prefix.");
             }
-        } else {
-            System.out.println("Invalid choice.");
         }
     }
 }

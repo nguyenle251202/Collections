@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleUI {
-    private final Dictionary dictionary;
+    final Dictionary dictionary;
     private final TranslateHandler translateHandler;
     private final SearchHandler searchHandler;
     private final HistoryHandler historyHandler;
@@ -24,9 +24,11 @@ public class ConsoleUI {
     }
 
     private void initializeSampleData() {
-        dictionary.addWord("hello", "a greeting", List.of("hi", "greetings"));
-        dictionary.addWord("world", "the earth", List.of("earth", "globe"));
-        dictionary.addWord("java", "a programming language", List.of("jvm", "jdk"));
+        dictionary.addWord("tý", "mouse", List.of("rat", "ratatouille"));
+        dictionary.addWord("sửu", "buffalo", List.of("ox", "bovine"));
+        dictionary.addWord("dần", "tiger", List.of("big cat", "predator"));
+        dictionary.addWord("mão", "cat", List.of("kitten", "feline"));
+        dictionary.addWord("thìn", "dragon", List.of("mythical beast", "serpent"));
     }
 
     public static void displayMenu() {
@@ -56,14 +58,12 @@ public class ConsoleUI {
             input = scanner.nextInt();
             scanner.nextLine();
 
-            // Gộp switch-case vào đây
             chosenOption = Enum.Option.fromCode(input);
             if (chosenOption == null) {
                 System.out.println("Invalid option");
                 continue;
             }
 
-            // Xử lý tất cả các option trong một switch-case duy nhất
             switch (chosenOption) {
                 case TRANSLATE:
                     System.out.println("----- Translate -----");
