@@ -1,6 +1,7 @@
 package ui;
 
 import enums.Enum;
+import manager.Dictionary;
 
 import java.util.Scanner;
 
@@ -22,6 +23,9 @@ public class ConsoleUI {
             case HISTORY:
                 System.out.println("----- History -----");
                 break;
+            case ADDSYNONYMS:
+                System.out.println("----- Synonyms -----");
+                break;
             case EXIT:
                 break;
             default:
@@ -42,7 +46,7 @@ public class ConsoleUI {
         System.out.println("[5]. Exit");
     }
     // ----------------------------------------------------
-    public void start() {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Enum.Option chosenOption;
         do {
